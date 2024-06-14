@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'tr';
+  src: url('./assets/font/TTTravels-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'tm';
+  src: url('./assets/font/TTTravels-Medium.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'tsb';
+  src: url('./assets/font/TTTravels-DemiBold.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'tb';
+  src: url('./assets/font/TTTravels-Bold.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ir';
+  src: url('./assets/font/Inter-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'isb';
+  src: url('./assets/font/Inter-SemiBold.ttf');
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'ir';
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
