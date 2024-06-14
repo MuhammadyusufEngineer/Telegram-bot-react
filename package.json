@@ -11,8 +11,12 @@
   },
   "dependencies": {
     "react": "^18.2.0",
+<<<<<<< HEAD
     "react-dom": "^18.2.0",
     "swiper": "^11.1.4"
+=======
+    "react-dom": "^18.2.0"
+>>>>>>> 377ebb3babdc8dbf777847f792b2d93834a1a1ef
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+<<<<<<< HEAD
     extend: {
       colors: {
         primary: '#1f2026',
@@ -20,6 +21,9 @@ export default {
         isb: ["isb"],
       },
     },
+=======
+    extend: {},
+>>>>>>> 377ebb3babdc8dbf777847f792b2d93834a1a1ef
   },
   plugins: [],
 }
