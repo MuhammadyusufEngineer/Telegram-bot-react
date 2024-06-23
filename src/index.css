@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-<<<<<<< HEAD
 @tailwind utilities;
 
 
@@ -51,7 +50,3 @@
   width: 95%;
   margin: 0 auto;
 }
-
-=======
-@tailwind utilities;
->>>>>>> 377ebb3babdc8dbf777847f792b2d93834a1a1ef

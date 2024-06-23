@@ -5,12 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-<<<<<<< HEAD
     extend: {
       colors: {
         primary: '#1f2026',
-        secondary: '#1f202620',
-        lowlight: '#ECEEF2'
+        secondary: 'rgb(27, 33, 73)',
+        lowlight: '#ECEEF2',
+        blue: '#1649FF'
       },
       fontFamily: {
         tr: ["tr"],
@@ -21,9 +21,9 @@ export default {
         isb: ["isb"],
       },
     },
-=======
-    extend: {},
->>>>>>> 377ebb3babdc8dbf777847f792b2d93834a1a1ef
+    animation: {
+      ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) 1;"
+    }
   },
   plugins: [],
 }
