@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import ChevronRight from '/src/components/Icons/ChevronRight'
+import { Link } from 'react-router-dom';
+import IconChevronRight from '/src/components/icons/iconChevronRight'
 import 'swiper/css'
 import Card from './Card.jsx';
 
@@ -9,12 +10,12 @@ const ProductsWrapper = ({ data }) => {
       {data.map(item => (
         <div className="mt-[10vw]" key={item.category}>
           <div className="container">
-            <a className="flex items-center gap-[5vw] mb-[5vw]">
+            <Link to={`/category/${item.category}`} className="flex items-center gap-[5vw] mb-[5vw]">
               <h2 className="text-[7vw] text-primary font-tsb capitalize leading-none">{item.category}</h2>
               <div>
-                <ChevronRight />
+                <IconChevronRight />
               </div>
-            </a>
+            </Link>
           </div>
           <Swiper
             className="pl-[2.5vw]"

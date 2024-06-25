@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 const Home = (props) => {
   return (
@@ -44,14 +44,14 @@ export default function Navigation() {
   ]
   return (
     <div className="fixed bottom-0 left-0 w-full py-[1.5vw] bg-white z-50 border border-t border-blue/20">
-        <div className="container flex items-center justify-between">
-          {nav.map(item => (
-            <Link to={item.path} className="flex flex-col items-center gap-[1vw]" key={item.id} onClick={() => switchActive(item.id)}>
-              {<item.icon className={`size-[6vw] stroke-[0.5px] ${active === item.id ? 'fill-blue' : 'fill-black/30'}`} />}
-              <p className={`text-[2.5vw] leading-none font-semibold ${active === item.id ? 'text-blue' : 'text-black/50'}`}>{item.title}</p>
-            </Link>
-          ))}
-        </div>
+      <div className="container flex items-center justify-between">
+        {nav.map(item => (
+          <Link to={item.path} className="flex flex-col items-center gap-[1vw]" key={item.id} onClick={() => switchActive(item.id)}>
+            {<item.icon className={`size-[6vw] stroke-[0.5px] ${active === item.id ? 'fill-blue' : 'fill-lowdark'}`} />}
+            <p className={`text-[2.5vw] leading-none font-tsb ${active === item.id ? 'text-blue' : 'text-black/50'}`}>{item.title}</p>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

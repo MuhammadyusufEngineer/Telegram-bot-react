@@ -10,6 +10,7 @@ export default {
         primary: '#1f2026',
         secondary: 'rgb(27, 33, 73)',
         lowlight: '#ECEEF2',
+        lowdark: 'rgba(0,0,0,.3)',
         blue: '#1649FF'
       },
       fontFamily: {
