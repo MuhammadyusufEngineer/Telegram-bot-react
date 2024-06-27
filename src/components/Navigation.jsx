@@ -43,12 +43,12 @@ export default function Navigation() {
     { id: 5, title: 'Profil', path: '/profile', icon: Profile }
   ]
   return (
-    <div className="fixed bottom-0 left-0 w-full py-[1.5vw] bg-white z-50 border border-t border-blue/20">
+    <div className="fixed bottom-0 left-0 w-full py-[1.5vw] bg-lowlight z-50 border border-t border-blue/20">
       <div className="container flex items-center justify-between">
         {nav.map(item => (
           <Link to={item.path} className="flex flex-col items-center gap-[1vw]" key={item.id} onClick={() => switchActive(item.id)}>
-            {<item.icon className={`size-[6vw] stroke-[0.5px] ${active === item.id ? 'fill-blue' : 'fill-lowdark'}`} />}
-            <p className={`text-[2.5vw] leading-none font-tsb ${active === item.id ? 'text-blue' : 'text-black/50'}`}>{item.title}</p>
+            {<item.icon className={`size-[8vw] stroke-[0.5px] ${active === item.id ? 'fill-blue' : 'fill-lowdark'}`} />}
+            <p className={`text-[3vw] leading-none font-tsb ${active === item.id ? 'text-blue' : 'text-lowdark'}`}>{item.title}</p>
           </Link>
         ))}
       </div>

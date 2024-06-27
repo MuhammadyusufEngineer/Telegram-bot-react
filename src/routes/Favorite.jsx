@@ -1,7 +1,20 @@
+import React, {useContext} from 'react'
+import { FavoriteContext } from '@/context/FavoriteContext'
+import Card from '@/components/Card'
+import Header from '@/components/Header'
+
 const Favorite = () => {
+  const {favorites} = useContext(FavoriteContext)
   return (
     <>
-      <h1 className="mt-10 text-center text-blue text-5xl font-tb">Halo from favorite.jsx </h1>
+      <Header child="Favorites"/>
+      <div className="container">
+        <div className="grid grid-cols-2 gap-[2vw] pt-[5vw]">
+          {favorites.map(product => (
+            <Card product={product} key={product.id} />
+          ))}
+        </div>
+      </div>
     </>
   )
 }

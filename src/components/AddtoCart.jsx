@@ -3,7 +3,7 @@ import Quantity from '@/components/Quantity'
 
 const AddtoCart = () => {
   return (
-    <div className="fixed bottom-[15vw] left-0 w-full">
+    <div className="fixed bottom-[17vw] left-0 w-full">
       <div className="container">
         <div className="flex gap-[2vw] justify-between">
           <Quantity />

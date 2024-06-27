@@ -1,7 +1,7 @@
 export function getData() {
   return [
     {
-      category: 'water',
+      category: 'waters',
       img: '/categories/category-bottle.png',
       products: [
         { id: 1, img: '/products/19lWater.webp', title: '1L Suv bakalashkali, qopqoqli, ko\'k, tabiiy, muzdek, juda zo\'r mezza, O\'ta foydali', description: '1 litrli shisha suv', price: '99 684 245', category: 'water' },
@@ -39,7 +39,7 @@ export function getData() {
       ]
     },
     {
-      category: 'chocolate',
+      category: 'chocolates',
       img: '/categories/category-choco.png',
       products: [
         { id: 15, img: '/products/choco-bar.webp', title: 'Sutli shokolad', description: '70% kakao qorong\'i shokolad', price: '10 000', category: 'chocolate' },

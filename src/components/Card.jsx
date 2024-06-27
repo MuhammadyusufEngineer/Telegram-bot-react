@@ -1,46 +1,57 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import IconFavorite from '/src/components/icons/iconFavorite.jsx'
-import IconAddtoCart from '/src/components/icons/iconAddtoCart.jsx'
+import IconFavorite from '@/components/icons/iconFavorite.jsx'
+import IconAddtoCart from '@/components/icons/iconAddtoCart.jsx'
+import { CartContext } from '@/context/CartContext'
+import { FavoriteContext } from '@/context/FavoriteContext'
+
 
 const Card = ({ product }) => {
-  const [favorite, setFavorite] = useState(false)
+  // const [favorite, setFavorite] = useState(false)
+  const { cart, addtoCart, removefromCart } = useContext(CartContext)
+  const { favorites, addtoFavorites, removefromFavorites } = useContext(FavoriteContext)
+
+  const isFavorite = favorites.some(item => item.id !== product.id)
+  const isInCart = cart.some(item => item.id !== product.id)
 
   const preventActions = (e) => {
     e.preventDefault()
     e.stopPropagation()
   }
 
-  const toggleFavorite = (e) => {
+
+  const handleToggleFavorite = (e) => {
     preventActions(e)
-    setFavorite(prevState => !prevState)
+    // favorites.filter(item => item.id === product.id) ? setFavorite(true) : setFavorite(false)
+    if (isFavorite) removefromFavorites(product.id)
+    else addtoFavorites(product.id)
   }
-  const addToCart = (e) => {
+
+  const handleAddCart = (e) => {
     preventActions(e)
-    setAddcart(prevState => !prevState)
+    if (isInCart) removefromCart(product.id)
+    else addtoCart(product.id)
   }
 
   return (
-    <div className="h-[65vw]">
 
-      <Link to={`/product/${product.id}`} className=" flex flex-col cursor-pointer">
-        <div className="h-[45vw] overflow-hidden flex items-center bg-lowlight rounded-md relative">
-          <img src={product.img} className="object-cover" alt="" />
-          <button className="absolute top-[3vw] right-[3vw] z-40" onClick={toggleFavorite}>
-            <IconFavorite isFavorite={favorite} />
+    <Link to={`/product/${product.id}`} className="h-[70vw] flex flex-col cursor-pointer pb-[5vw]">
+      <div key={product.id} className="h-[45vw] overflow-hidden flex items-center bg-lowlight rounded-md relative">
+        <img src={product.img} className="object-cover" alt="" />
+        <button className="absolute top-[3vw] right-[3vw] z-40" onClick={handleToggleFavorite}>
+          <IconFavorite />
+        </button>
+      </div>
+      <div className="px-[1vw] flex-grow flex flex-col justify-between">
+        <p className="text-[3vw] text-secondary font-semibold leading-none mt-[3vw] line-clamp-2">{product.title}</p>
+        <div className="flex items-center justify-between mt-[3vw]">
+          <p className="text-[3vw] text-secondary font-tsb leading-none">{product.price} so'm</p>
+          <button onClick={handleAddCart} className="relative z-40 size-[7vw] border border-blue rounded-full p-[1.5vw]">
+            <IconAddtoCart className="fill-blue" />
           </button>
         </div>
-        <div className="px-[1vw] flex-grow flex flex-col justify-between">
-          <p className="text-[3vw] text-secondary leading-none mt-[3vw] line-clamp-2">{product.title}</p>
-          <div className="flex items-center justify-between mt-[3vw]">
-            <p className="text-[3vw] text-secondary font-semibold leading-none">{product.price} so'm</p>
-            <button onClick={addToCart} className="relative z-40 size-[7vw] border border-blue rounded-full p-[1.5vw]">
-              <IconAddtoCart className="fill-blue" />
-            </button>
-          </div>
-        </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 

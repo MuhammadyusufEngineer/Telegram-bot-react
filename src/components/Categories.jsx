@@ -16,7 +16,7 @@ export default function Categories({ data }) {
                 <div className="size-[17vw] rounded-xl bg-lowlight p-[2vw]">
                   <img src={item.img} alt={item.category} />
                 </div>
-                <p className="text-primary text-[3.5vw] text-center mt-[2vw] capitalize">{item.category}</p>
+                <p className="text-primary text-[3.5vw] text-center font-tsb mt-[2vw] capitalize">{item.category}</p>
               </Link>
             </SwiperSlide>
           ))}

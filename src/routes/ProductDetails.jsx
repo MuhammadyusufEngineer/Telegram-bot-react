@@ -10,7 +10,7 @@ const ProductDetails = ({ data }) => {
 
   return (
     <div className="container pb-[40vw]">
-      <div className="flex items-center justify-between my-[3vw]">
+      <div className="relative flex items-center justify-end my-[3vw]">
         <Goback />
         <IconFavorite />
       </div>
