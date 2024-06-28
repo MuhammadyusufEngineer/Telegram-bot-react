@@ -5,6 +5,10 @@ import Header from '@/components/Header'
 
 const Favorite = () => {
   const {favorites} = useContext(FavoriteContext)
+  if(!Array.isArray(favorites)) {
+    console.error('favorites is not an array', favorites)
+    return null
+  }
   return (
     <>
       <Header child="Favorites"/>

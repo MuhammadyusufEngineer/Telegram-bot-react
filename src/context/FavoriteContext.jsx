@@ -4,17 +4,13 @@ export const FavoriteContext = createContext()
 
 export const FavoriteProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([])
-  // const [favorite, setFavorite] = useState(false)
 
   const addtoFavorites = (product) => {
-    // setFavorite(favorites.filter(item => item.id !== product.id))
-    setFavorites([...favorites, product])
-    console.log('favorite: ', favorites)
+    setFavorites((prevFavorites) => [...prevFavorites, product])
   }
 
   const removefromFavorites = (productId) => {
-    setFavorites(favorites.filter(item => item.id !== productId))
-    console.log('not favorite: ', favorites)
+    setFavorites(prevFavorites => prevFavorites.filter(item => item.id !== productId))
   }
 
   return (

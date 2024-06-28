@@ -6,18 +6,20 @@ import Header from '@/components/Header'
 const Cart = () => {
   const {cart} = useContext(CartContext)
   console.log('cart: ',cart)
+  if(!Array.isArray(cart)){
+    console.error('cart is not an array', cart)
+    return null
+  }
   return (
     <>
       <Header child="10ta Mahsulotlar savatda" />
       <div className="pb-[30vw]">
-        <div className="container">
-          <div className="grid grid-cols-2 gap-[2vw] pt-[5vw]">
             {cart.map(product => (
               <div key={product.id} className="py-[5vw] border-b border-lowdark">
                 <div className="container">
                   <div className="flex gap-[2vw]">
                     <div className="w-[30%]  overflow-hidden">
-                      <img src="/products/19lWater.webp" className="rounded-lg bg-lowlight" alt="" />
+                      <img src={product.img} className="rounded-lg bg-lowlight" alt="" />
                     </div>
                     <div className="w-[70%]">
                       <p className="text-[5vw] font-tb leading-none">{product.price} so'm</p>
@@ -29,9 +31,6 @@ const Cart = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
         <div className="fixed bottom-[15vw] left-0 w-full bg-lowlight py-[2vw]">
           <div className="container">
             <div className="flex items-stretch">

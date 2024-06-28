@@ -7,12 +7,11 @@ import { FavoriteContext } from '@/context/FavoriteContext'
 
 
 const Card = ({ product }) => {
-  // const [favorite, setFavorite] = useState(false)
   const { cart, addtoCart, removefromCart } = useContext(CartContext)
   const { favorites, addtoFavorites, removefromFavorites } = useContext(FavoriteContext)
 
-  const isFavorite = favorites.some(item => item.id !== product.id)
-  const isInCart = cart.some(item => item.id !== product.id)
+  const isFavorite = favorites.some(item => item.id === product.id)
+  const isInCart = cart.some(item => item.id === product.id)
 
   const preventActions = (e) => {
     e.preventDefault()
@@ -22,15 +21,14 @@ const Card = ({ product }) => {
 
   const handleToggleFavorite = (e) => {
     preventActions(e)
-    // favorites.filter(item => item.id === product.id) ? setFavorite(true) : setFavorite(false)
     if (isFavorite) removefromFavorites(product.id)
-    else addtoFavorites(product.id)
+    else addtoFavorites(product)
   }
 
   const handleAddCart = (e) => {
     preventActions(e)
     if (isInCart) removefromCart(product.id)
-    else addtoCart(product.id)
+    else addtoCart(product)
   }
 
   return (
@@ -39,7 +37,7 @@ const Card = ({ product }) => {
       <div key={product.id} className="h-[45vw] overflow-hidden flex items-center bg-lowlight rounded-md relative">
         <img src={product.img} className="object-cover" alt="" />
         <button className="absolute top-[3vw] right-[3vw] z-40" onClick={handleToggleFavorite}>
-          <IconFavorite />
+          <IconFavorite isFavorite={isFavorite} />
         </button>
       </div>
       <div className="px-[1vw] flex-grow flex flex-col justify-between">

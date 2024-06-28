@@ -6,13 +6,11 @@ export const CartProvider = ({children}) => {
   const [cart, setCart] = useState([])
 
   const addtoCart = (product) => {
-    setCart([...cart, product])
-    console.log('add: ', cart)
+    setCart(prevCart => [...prevCart, product])
   }
   
   const removefromCart = (productId) => {
-    setCart(cart.filter(item => item.id !== productId))
-    console.log('remove: ', cart)
+    setCart(prevCart => prevCart.filter(item => item.id !== productId))
   }
 
   return (
