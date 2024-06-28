@@ -43,7 +43,7 @@ const Card = ({ product }) => {
       <div className="px-[1vw] flex-grow flex flex-col justify-between">
         <p className="text-[3vw] text-secondary font-semibold leading-none mt-[3vw] line-clamp-2">{product.title}</p>
         <div className="flex items-center justify-between mt-[3vw]">
-          <p className="text-[3vw] text-secondary font-tsb leading-none">{product.price} so'm</p>
+          <p className="text-[3.3vw] text-secondary font-tsb leading-none">{product.price} so'm</p>
           <button onClick={handleAddCart} className="relative z-40 size-[7vw] border border-blue rounded-full p-[1.5vw]">
             <IconAddtoCart className="fill-blue" />
           </button>
