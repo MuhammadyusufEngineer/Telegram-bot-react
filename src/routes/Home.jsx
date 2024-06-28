@@ -1,5 +1,6 @@
 import ProductsWrapper from '@/components/ProductsWrapper.jsx';
 import Categories from '@/components/Categories.jsx';
+import 'home.css'
 const Home = ({data}) => {
   return (
     <>
