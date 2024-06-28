@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import IconChevronRight from '@/components/icons/iconChevronRight'
-import Header from '../components/Header'
+import Header from '@/components/Header'
 const Catalog = ({ data }) => {
   return (
     <div className="bg-lowlight min-h-screen pb-[20vw]">
