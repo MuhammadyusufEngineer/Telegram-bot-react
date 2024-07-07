@@ -18,7 +18,7 @@ const ProductsWrapper = ({ data }) => {
             </Link>
           </div>
           <Swiper
-            className="pl-[2.5vw]"
+            className="px-[2.5vw]"
             spaceBetween={5}
             slidesPerView={2.5}>
             {item.products.map(product => (

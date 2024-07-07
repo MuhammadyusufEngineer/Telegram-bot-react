@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home'
@@ -16,17 +16,18 @@ import { FavoriteProvider } from '@/context/FavoriteContext'
 import { CartProvider } from '@/context/CartContext'
 
 const data = getData()
+const telegram = window.Telegram.WebApp
 
 const router = createBrowserRouter([
   {
-    path: '/', element: <Root />, errorElement: <ErrorPage />,
+    path: '/', element: <Root data={data} />, errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <Navigate to="/home" />, errorElement: <ErrorPage /> },
       { path: '/home', element: <Home data={data} />, errorElement: <ErrorPage /> },
       { path: '/catalog', element: <Catalog data={data} />, errorElement: <ErrorPage /> },
       { path: '/product/:productID', element: <ProductDetails data={data} />, errorElement: <ErrorPage /> },
       { path: '/category/:categoryName', element: <CategoryProducts data={data} />, errorElement: <ErrorPage /> },
-      { path: '/cart', element: <Cart />, errorElement: <ErrorPage /> },
+      { path: '/cart', element: <Cart telegram={telegram} />, errorElement: <ErrorPage /> },
       { path: '/favorite', element: <Favorite />, errorElement: <ErrorPage /> },
       { path: '/profile', element: <Profile />, errorElement: <ErrorPage /> },
     ]

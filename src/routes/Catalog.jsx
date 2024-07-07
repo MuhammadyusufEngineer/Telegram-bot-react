@@ -6,20 +6,20 @@ const Catalog = ({ data }) => {
     <div className="bg-lowlight min-h-screen pb-[20vw]">
       <div className="flex flex-col gap-[2vw] ">
         <Header child="Katalog" />
-        <div className="container border border-lowdark rounded-xl bg-white">
-          {data.map((item, index) => (
-            <Link to={`/category/${item.category}`} key={item.category} className={`flex items-center justify-between pr-[5vw] ${index !== data.length -1 ? 'border-b border-solid border-lowdark' : ''}`}>
-              <div className="flex items-center gap-[2vw]" key={item.category}>
-                <div className="size-[17vw] rounded-xl p-[2vw]">
-                  <img src={item.img} alt={item.category} />
+        <div className="container pt-[5vw]">
+          <div className="border border-lowdark rounded-xl bg-white">
+            {data.map((item, index) => (
+              <Link to={`/category/${item.category}`} key={item.category} className={`flex items-center justify-between gap-[2vw] p-[3vw] ${index !== data.length - 1 ? 'border-b border-solid border-lowdark' : ''}`}>
+                <div>
+                  <img className="w-[7vw]" src={item.img} alt={item.category} />
                 </div>
-                <p className="text-primary text-[5vw] text-center font-tm leading-none capitalize">{item.category}</p>
-              </div>
-              <div>
-                <IconChevronRight />
-              </div>
-            </Link>
-          ))}
+                <p className="text-primary text-[4vw] font-tm flex-1 leading-none capitalize">{item.category}</p>
+                <div className="w-[7vw]">
+                  <IconChevronRight />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

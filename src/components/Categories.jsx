@@ -4,7 +4,7 @@ import 'swiper/css'
 export default function Categories({ data }) {
   return (
     <>
-      <nav className="my-[5vw]">
+      <nav className="py-[5vw]">
         <Swiper
           className="pl-[2.5vw]"
           spaceBetween={5}

@@ -6,7 +6,7 @@ const CategoryProducts = ({ data }) => {
   const categoryData = data.find(category => category.category === categoryName)
   const products = categoryData.products
   return (
-    <>
+    <div className="bg-white pb-[20vw]">
       <Header child={categoryData.category} />
       <div className="container">
         <div className="grid grid-cols-2 gap-[2vw] pt-[5vw]">
@@ -15,7 +15,7 @@ const CategoryProducts = ({ data }) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 export default CategoryProducts
