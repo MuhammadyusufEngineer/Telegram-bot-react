@@ -5,7 +5,10 @@ import Home from './routes/Home'
 import Catalog from './routes/Catalog'
 import Cart from './routes/Cart'
 import Favorite from './routes/Favorite'
-import Profile from './routes/Profile'
+import Profile from './routes/Auth/Profile'
+import PhoneSignIn from './routes/Auth/PhoneSignIn'
+import EmailSignIn from './routes/Auth/EmailSignIn'
+import GoogleSignIn from './routes/Auth/GoogleSignIn'
 import Root from './routes/root'
 import './index.css'
 import ErrorPage from './error-page'
@@ -30,6 +33,9 @@ const router = createBrowserRouter([
       { path: '/cart', element: <Cart telegram={telegram} />, errorElement: <ErrorPage /> },
       { path: '/favorite', element: <Favorite />, errorElement: <ErrorPage /> },
       { path: '/profile', element: <Profile />, errorElement: <ErrorPage /> },
+      { path: '/PhoneSignIn', element: <PhoneSignIn />, errorElement: <ErrorPage /> },
+      { path: '/EmailSignIn', element: <EmailSignIn />, errorElement: <ErrorPage /> },
+      { path: '/GoogleSigIn', element: <GoogleSignIn />, errorElement: <ErrorPage /> },
     ]
   },
 ])

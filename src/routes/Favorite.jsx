@@ -11,9 +11,12 @@ const Favorite = () => {
     return null
   }
 
-  if (!favorites.length) return <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-    <img src="/not-found.png" alt="" />
-    <p className="text-center text-[5vw] text-lowdark mt-20 font-tm">Sevimli mahsulotlar yo'q</p>
+  if (favorites.length === 0) return <div className="min-h-[90vh] bg-white">
+    <Header child="Ortga qaytish" />
+    <div className="flex flex-col items-center justify-center min-h-[80vh]">
+      <img src="/not-found.png" alt="" />
+      <p className="text-center text-[5vw] text-lowdark mt-20 font-tm">Sevimli mahsulotlar yo'q</p>
+    </div>
   </div>
 
   return (
