@@ -50,7 +50,7 @@ const PhoneSignIn = () => {
 
   return (
     <div className="min-h-[90vh] bg-white">
-      <div id="recaptcha-container" className="invisible"></div>
+      <div id="recaptcha-container" className="hidden"></div>
       <Header child="Kirish" />
       <div id="recaptcha-container"></div>
       {confirmationResult ? (
