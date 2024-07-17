@@ -3,6 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
+
 const firebaseConfig = {
   apiKey: "AIzaSyBRoKKKF_O0QEu62qfgdX9gNmScR6DeeYk",
   authDomain: "telegram-bot-react.firebase.com",
