@@ -12,7 +12,7 @@ const PhoneSignIn = () => {
 
   const setupRecaptcha = () => {
     if (!window.recaptchaVerifier) {
-      window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
+      window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
         'size': 'invisible',
         'callback': (response) => {
           handleSignIn();
@@ -50,6 +50,7 @@ const PhoneSignIn = () => {
 
   return (
     <div className="min-h-[90vh] bg-white">
+      <div id="recaptcha-container" className="invisible"></div>
       <Header child="Kirish" />
       <div id="recaptcha-container"></div>
       {confirmationResult ? (

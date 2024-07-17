@@ -20,9 +20,9 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-if (auth.settings) {
-  auth.settings.appVerificationDisabledForTesting = true;
-}
+// if (auth.settings) {
+//   auth.settings.appVerificationDisabledForTesting = true;
+// }
 export { auth, RecaptchaVerifier, signInWithPhoneNumber, GoogleAuthProvider, signInWithPopup };
 
 // auth.settings.appVerificationDisabledForTesting = true;
