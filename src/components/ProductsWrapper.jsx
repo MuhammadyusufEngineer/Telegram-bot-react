@@ -8,10 +8,10 @@ const ProductsWrapper = ({ data }) => {
   return (
     <>
       {data.map(item => (
-        <div className="mt-[10vw]" key={item.category}>
+        <div className="mt-[10vw]" key={item.name}>
           <div className="container">
-            <Link to={`/category/${item.category}`} className="flex items-center gap-[5vw] mb-[5vw]">
-              <h2 className="text-[7vw] text-primary font-tsb capitalize leading-none">{item.category}</h2>
+            <Link to={`/category/${item.name}`} className="flex items-center gap-[5vw] mb-[5vw]">
+              <h2 className="text-[7vw] text-primary font-tsb capitalize leading-none">{item.name}</h2>
               <div>
                 <IconChevronRight />
               </div>

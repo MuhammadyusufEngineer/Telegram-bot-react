@@ -1,30 +1,12 @@
-import { useCallback, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "@/context/CartContext";
 import Quantity from "@/components/Quantity";
 import Header from "@/components/Header";
+import { Link } from "react-router-dom";
 
-const Cart = ({ telegram }) => {
-  const { cart, removefromCart, updateQuantity, formatPrice } = useContext(CartContext);
+const Cart = () => {
+  const { cart, removefromCart, updateQuantity, formatPrice, sumTotal } = useContext(CartContext);
   const isEmpty = cart.length === 0;
-
-  const sumTotal = () => {
-    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  };
-
-  const handleCheckout = useCallback(() => {
-    // const queryID = telegram.initDataUnsave?.query_id
-    // if (queryID) {
-    // fetch('http://localhost:8000/bot-data', {
-    // method: 'POST',
-    // headers: {
-    // 'Content-Type': "application/json"
-    // },
-    // body: JSON.stringify(cart)
-    // })
-    // } else {
-    telegram.sendData(JSON.stringify(cart))
-    // }
-  }, [cart])
 
   if (isEmpty) {
     return (<div className="min-h-[90vh] bg-white">
@@ -71,13 +53,14 @@ const Cart = ({ telegram }) => {
             <div className="flex items-stretch">
               <div className="w-1/2">
                 <p className="text-[5vw] font-tsb">
-                  {formatPrice(sumTotal())} so'm
+                  {formatPrice(sumTotal(cart))} so'm
                 </p>
                 <p className="text-[4vw]">{cart.length} ta mahsulot</p>
               </div>
-              <button className="w-1/2 text-[5vw] bg-blue text-white rounded-lg leading-none"
-                onClick={handleCheckout}>
-                Rasmiylashtirish
+              <button className="w-1/2 text-[5vw] bg-blue text-white rounded-lg leading-none">
+                <Link to='/checkout'>
+                  Buyurtma berish
+                </Link>
               </button>
             </div>
           </div>

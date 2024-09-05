@@ -11,12 +11,12 @@ export default function Categories({ data }) {
           slidesPerView={4.7}>
 
           {data.map(item => (
-            <SwiperSlide key={item.category}>
-              <Link to={`/category/${item.category}`} className="w-[17vw]">
+            <SwiperSlide key={item.name}>
+              <Link to={`/category/${item.name}`} className="w-[17vw]">
                 <div className="size-[17vw] rounded-xl bg-lowlight p-[2vw]">
-                  <img src={item.img} alt={item.category} />
+                  <img src={item.img} alt={item.name} />
                 </div>
-                <p className="text-primary text-[3.5vw] text-center font-tsb mt-[2vw] capitalize">{item.category}</p>
+                <p className="text-primary text-[3.5vw] text-center font-tsb mt-[2vw] capitalize">{item.name}</p>
               </Link>
             </SwiperSlide>
           ))}

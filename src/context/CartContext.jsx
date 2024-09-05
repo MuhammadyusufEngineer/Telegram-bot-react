@@ -1,19 +1,18 @@
 import React, { createContext, useState } from 'react'
-
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([])
-
+  
   const addtoCart = (product) => {
     setCart(prevCart => {
       const existingProduct = prevCart.find(item => item.id === product.id)
       if (existingProduct) {
         return prevCart.map(item => {
           item.id === product.id
-            ? { ...item, quantity: item.quantity + product.quantity }
+          ? { ...item, quantity: item.quantity + product.quantity }
             : item
-        })
+          })
       } else {
         return [...prevCart, { ...product, quantity: product.quantity }]
       }
@@ -29,6 +28,9 @@ export const CartProvider = ({ children }) => {
   const removefromCart = (productId) => {
     setCart(prevCart => prevCart.filter(item => item.id !== productId))
   }
+  const sumTotal = cart => {
+    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  };
 
   const formatPrice = price => {
     return new Intl.NumberFormat('en-US', {
@@ -36,9 +38,9 @@ export const CartProvider = ({ children }) => {
       maximumFractionDigits: 0,
     }).format(price).replace(/,/g, ' ')
   }
-
+  
   return (
-    <CartContext.Provider value={{ cart, addtoCart, removefromCart, updateQuantity, formatPrice }}>
+    <CartContext.Provider value={{ cart, addtoCart, removefromCart, updateQuantity, formatPrice, sumTotal }}>
       {children}
     </CartContext.Provider>
   )

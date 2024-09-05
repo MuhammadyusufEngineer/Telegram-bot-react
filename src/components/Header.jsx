@@ -2,7 +2,7 @@ import Goback from '@/components/Goback'
 
 const Header = ({ child }) => {
   return (
-    <div className="sticky top-[14.5vw] left-0 w-full bg-lowlight py-[1vw] z-50 border-b border-solid border-lowdark">
+    <div className="sticky top-[14.2vw] left-0 w-full bg-lowlight py-[1vw] z-50 border-b border-solid border-lowdark">
       <div className="relative">
         <Goback />
         <div className="px-[10vw]">
