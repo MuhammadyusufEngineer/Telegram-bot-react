@@ -18,7 +18,6 @@ const Checkout = ({ telegram }) => {
       ...prevState,
       [name]: value
     }))
-    console.log(user)
   } 
 
   const { cart, sumTotal, formatPrice } = useContext(CartContext)
