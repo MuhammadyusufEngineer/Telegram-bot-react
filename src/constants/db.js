@@ -2,7 +2,7 @@ import axios from 'axios'
 
 async function getData() {
   try {
-    const response = await axios.get('http://127.0.0.1:8000/api/categories/', {
+    const response = await axios.get('http://muhammadyusufengineer.pythonanywhere.com/api/categories/', {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true
     })
