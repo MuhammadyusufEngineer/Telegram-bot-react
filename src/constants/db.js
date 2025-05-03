@@ -2,10 +2,13 @@ import axios from "axios";
 
 async function getData() {
   try {
-    const response = await axios.get("http://127.0.0.1:8000/api/categories/", {
-      headers: { "Content-Type": "application/json" },
-      withCredentials: true,
-    });
+    const response = await axios.get(
+      "https://Muhammadyusufengineer.pythonanywhere.com/api/categories/",
+      {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      }
+    );
     return response.data;
   } catch (error) {
     console.error(
