@@ -14,7 +14,7 @@ export default function Categories({ data }) {
             <SwiperSlide key={item.name}>
               <Link to={`/category/${item.name}`} className="w-[17vw]">
                 <div className="size-[17vw] rounded-xl bg-lowlight p-[2vw]">
-                  <img src={item.img} alt={item.name} />
+                  <img src={item.image} alt={item.name} />
                 </div>
                 <p className="text-primary text-[3.5vw] text-center font-tsb mt-[2vw] capitalize">{item.name}</p>
               </Link>

@@ -56,8 +56,8 @@ const ProductDetails = ({ data }) => {
             <IconFavorite isFavorite={isFavorite} />
           </button>
         </div>
-        <img src={product.img} className="bg-lowlight rounded-lg mb-[5vw]" alt="" />
-        <h2 className="text-[7vw] font-tsb leading-tight">{product.title}</h2>
+        <img src={product.image} className="bg-lowlight rounded-lg mb-[5vw]" alt="" />
+        <h2 className="text-[7vw] font-tsb leading-tight">{product.name}</h2>
         <p className="text-[5vw] text-blue my-[5vw] font-tm">
           {formatPrice(product.price)} <span className="text-primary">so'm</span>
         </p>

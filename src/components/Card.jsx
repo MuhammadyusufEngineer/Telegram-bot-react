@@ -35,13 +35,13 @@ const Card = ({ product }) => {
 
     <Link to={`/product/${product.id}`} className="h-[72vw] flex flex-col cursor-pointer pb-[5vw]">
       <div key={product.id} className="h-[45vw] overflow-hidden flex items-center bg-lowlight rounded-md relative">
-        <img src={product.img} className="object-cover" alt="" />
+        <img src={product.image} className="object-cover" alt="" />
         <button className="absolute top-[3vw] right-[3vw] z-40" onClick={handleToggleFavorite}>
           <IconFavorite isFavorite={isFavorite} />
         </button>
       </div>
       <div className="px-[1vw] flex-grow flex flex-col justify-between">
-        <p className="text-[3vw] text-secondary font-semibold  mt-[3vw] line-clamp-2">{product.title}</p>
+        <p className="text-[3vw] text-secondary font-semibold  mt-[3vw] line-clamp-2">{product.name}</p>
         <div className="flex items-center justify-between mt-[3vw]">
           <p className="text-[3.3vw] text-secondary font-tsb leading-none">{formatPrice(product.price)} so'm</p>
           <button onClick={handleAddCart}>

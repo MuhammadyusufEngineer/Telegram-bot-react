@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home'
@@ -21,7 +21,7 @@ const telegram = window.Telegram.WebApp
 
 async function initializeApp() {
   const data = await getData()
-  
+
   const router = createBrowserRouter([
     {
       path: '/', element: <Root data={data} />, errorElement: <ErrorPage />,

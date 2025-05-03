@@ -27,13 +27,13 @@ const Cart = () => {
             <div className="container">
               <div className="flex gap-[2vw]">
                 <div className="w-[30%]  overflow-hidden">
-                  <img src={product.img} className="rounded-lg bg-lowlight" alt="" />
+                  <img src={product.image} className="rounded-lg bg-lowlight" alt="" />
                 </div>
                 <div className="w-[70%]">
                   <p className="text-[5vw] font-tb leading-none">
                     {formatPrice(product.price * product.quantity)} so'm
                   </p>
-                  <p className="text-[4vw] font-tm">{product.title}</p>
+                  <p className="text-[4vw] font-tm">{product.name}</p>
                   <p className="text-[3vw] font-tm mt-[3vw] mb-[1vw]">
                     {formatPrice(product.price)} so'm/dona
                   </p>

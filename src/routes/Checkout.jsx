@@ -6,19 +6,19 @@ import 'swiper/css'
 
 const Checkout = ({ telegram }) => {
   const [user, setUser] = useState({
-    surname:'',
+    surname: '',
     name: '',
     phone: '',
     payment: ''
   })
 
   const handleInputChange = e => {
-    const {name, value} = e.target
+    const { name, value } = e.target
     setUser(prevState => ({
       ...prevState,
       [name]: value
     }))
-  } 
+  }
 
   const { cart, sumTotal, formatPrice } = useContext(CartContext)
 
@@ -46,7 +46,7 @@ const Checkout = ({ telegram }) => {
           {cart.map(item => (
             <SwiperSlide key={item.name}>
               <div className="size-[17vw] rounded-xl bg-lowlight">
-                <img src={item.img} alt={item.name} />
+                <img src={item.image} alt={item.name} />
               </div>
             </SwiperSlide>
           ))}
@@ -55,48 +55,48 @@ const Checkout = ({ telegram }) => {
         <div className="container">
           <p className="text-[5vw] font-tsb pt-[10vw]">Buyurtma qabul qiluvchi</p>
           <div className="flex flex-col gap-[3vw] my-[5vw]">
-              <div className="p-[4vw] rounded-lg bg-lowlight text-[4vw] placeholder:text-lowdark">
-                <input className="bg-lowlight w-full outline-none" 
-                name="surname" 
-                id="surname" 
-                type="text" 
+            <div className="p-[4vw] rounded-lg bg-lowlight text-[4vw] placeholder:text-lowdark">
+              <input className="bg-lowlight w-full outline-none"
+                name="surname"
+                id="surname"
+                type="text"
                 placeholder="Familiya"
                 value={user.surname}
                 onChange={handleInputChange}
-                required/>
-              </div>
-              <div className="p-[4vw] rounded-lg bg-lowlight text-[4vw] placeholder:text-lowdark">
-                <input className="bg-lowlight w-full outline-none" 
-                name="name" 
-                id="name" 
-                type="text" 
+                required />
+            </div>
+            <div className="p-[4vw] rounded-lg bg-lowlight text-[4vw] placeholder:text-lowdark">
+              <input className="bg-lowlight w-full outline-none"
+                name="name"
+                id="name"
+                type="text"
                 placeholder="Ism"
                 value={user.name}
                 onChange={handleInputChange}
-                required/>
-              </div>
-              <div className="p-[4vw] rounded-lg bg-lowlight text-[4vw] placeholder:text-lowdark">
-                <input className="bg-lowlight w-full outline-none" 
-                name="phone" 
-                id="phone" 
-                type="text" 
+                required />
+            </div>
+            <div className="p-[4vw] rounded-lg bg-lowlight text-[4vw] placeholder:text-lowdark">
+              <input className="bg-lowlight w-full outline-none"
+                name="phone"
+                id="phone"
+                type="text"
                 placeholder="Telefon raqam"
                 value={user.phone}
                 onChange={handleInputChange}
-                required/>
-              </div>
+                required />
+            </div>
           </div>
 
           <p className="text-[5vw] font-tsb pt-[10vw]">To'lov turi</p>
           <div className="flex flex-col gap-[3vw] my-[5vw]">
             {payment.map(item => (
               <label key={item.id} htmlFor={item.id} className="has-[input:checked]:border-blue border border-transparent flex gap-[2vw] bg-lowlight p-[4vw] rounded-lg">
-                <input type="radio" 
-                name={item.name} 
-                id={item.id} 
-                value={item.id} 
-                onChange={handleInputChange}
-                required/>
+                <input type="radio"
+                  name={item.name}
+                  id={item.id}
+                  value={item.id}
+                  onChange={handleInputChange}
+                  required />
                 <p className="text-[4vw] font-tsb">{item.label}</p>
               </label>
             ))}
