@@ -3,7 +3,7 @@ import axios from "axios";
 async function getData() {
   try {
     const response = await axios.get(
-      "https://https://telegrambotdjango.onrender.com/api/categories/",
+      "https://telegrambotdjango.onrender.com/api/categories/",
       {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
